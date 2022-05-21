@@ -1,4 +1,4 @@
-package com.notesapp.view.activity
+package com.notesapp.ui.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,9 +8,9 @@ import android.widget.TextView
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.textfield.TextInputEditText
 import com.notesapp.R
-import com.notesapp.model.data.DataBaseManager
-import com.notesapp.model.data.SharedPreferencesManager
-import com.notesapp.model.entity.Note
+import com.notesapp.data.database.DataBaseManager
+import com.notesapp.core.SharedPreferencesManager
+import com.notesapp.data.entity.Note
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -43,7 +43,7 @@ class SharedPreferencesActivity : AppCompatActivity() {
 
     fun database() {
         lifecycleScope.launch {
-            var list = listOf<Note>(
+            var list = mutableListOf<Note>(
                 Note(1, "Nota 1", "Esta es mi nota 1", Date()),
                 Note(2, "Nota 2", "Esta es mi nota 2", Date()),
                 Note(3, "Nota 3", "Esta es mi nota 3", Date()),

@@ -1,13 +1,13 @@
-package com.notesapp.model.data.dao
+package com.notesapp.data.database.dao
 
 import androidx.room.*
-import com.notesapp.model.entity.Note
+import com.notesapp.data.entity.Note
 
 @Dao
 interface NoteDao {
 
     @Query("SELECT * FROM notes_table")
-    suspend fun getAll(): List<Note>
+    suspend fun getAll(): MutableList<Note>
 
     @Query("SELECT * FROM notes_table WHERE id = :id")
     suspend fun getById(id: Int): Note
@@ -16,7 +16,7 @@ interface NoteDao {
     suspend fun update(note: Note)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(notes: List<Note>)
+    suspend fun insert(notes: MutableList<Note>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(note: Note)

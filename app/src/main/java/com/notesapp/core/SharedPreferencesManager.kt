@@ -1,4 +1,4 @@
-package com.notesapp.model.data
+package com.notesapp.core
 
 import android.content.Context
 

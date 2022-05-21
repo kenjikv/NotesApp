@@ -1,4 +1,4 @@
-package com.notesapp.model.entity
+package com.notesapp.data.entity
 
 import androidx.room.TypeConverter
 import java.util.*

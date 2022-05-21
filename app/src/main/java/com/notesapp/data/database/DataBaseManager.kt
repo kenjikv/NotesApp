@@ -1,13 +1,13 @@
-package com.notesapp.model.data
+package com.notesapp.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.notesapp.model.data.dao.NoteDao
-import com.notesapp.model.entity.Converters
-import com.notesapp.model.entity.Note
+import com.notesapp.data.database.dao.NoteDao
+import com.notesapp.data.entity.Converters
+import com.notesapp.data.entity.Note
 
 @Database(
     entities = [Note::class],
